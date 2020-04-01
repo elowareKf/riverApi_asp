@@ -10,7 +10,7 @@ namespace RiverApi.Db {
         public DbSet<HotSpot> HotSpots { get; set; }
         public DbSet<LevelSpot> LevelSpots { get; set; }
         public DbSet<Measurement> Measurements { get; set; }
-        public DbSet<River> River { get; set; }
+        public DbSet<River> Rivers { get; set; }
         public DbSet<Section> Sections { get; set; }
         
         /// <summary>

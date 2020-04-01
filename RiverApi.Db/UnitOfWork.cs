@@ -2,7 +2,7 @@ using Models;
 using RiverApi.Db.Interfaces;
 
 namespace RiverApi.Db {
-    public class UnitOfWork : IUnitOfWork{
+    public class UnitOfWork : IUnitOfWork {
         private readonly string _connectionString;
         public readonly RiverApiContext Context;
 
@@ -15,9 +15,9 @@ namespace RiverApi.Db {
         public UnitOfWork(string connectionString) {
             _connectionString = connectionString;
             Context = new RiverApiContext(_connectionString);
-            
+
             Users = new UserRepository(Context.User, Context);
-            Rivers = new Repository<River>(Context.River, Context);
+            Rivers = new Repository<River>(Context.Rivers, Context);
             LevelSpots = new Repository<LevelSpot>(Context.LevelSpots, Context);
             Measurements = new Repository<Measurement>(Context.Measurements, Context);
             Sections = new Repository<Section>(Context.Sections, Context);
@@ -25,10 +25,8 @@ namespace RiverApi.Db {
 
         public IRepository<HotSpot> HotSpots { get; set; }
 
-        public void SaveChanges()
-        {
+        public void SaveChanges() {
             Context.SaveChanges();
         }
-
     }
 }

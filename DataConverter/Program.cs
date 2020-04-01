@@ -29,8 +29,8 @@ namespace DataConverter {
             mysql.Close();
 
             var unitOfWork = new UnitOfWork(null);
-            _rivers.Select(r => unitOfWork.Rivers.Add(r.Value));
-            unitOfWork.SaveChanges();
+            _rivers.Select(r => unitOfWork.Context.Rivers.Add(r.Value));
+            unitOfWork.Context.SaveChanges();
         }
 
         private static void GetMeasurements(MySqlConnection mysql) {
