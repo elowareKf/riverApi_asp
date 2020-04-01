@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverApi.Db", "RiverApi.Db\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverApi.Models", "RiverApi.Models\RiverApi.Models.csproj", "{3FDE82DB-5FC1-4FC4-B926-8CAC6549FD90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataConverter", "DataConverter\DataConverter.csproj", "{483A5ADB-6BF8-4816-B4E1-10EA2871DD65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{3FDE82DB-5FC1-4FC4-B926-8CAC6549FD90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FDE82DB-5FC1-4FC4-B926-8CAC6549FD90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FDE82DB-5FC1-4FC4-B926-8CAC6549FD90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{483A5ADB-6BF8-4816-B4E1-10EA2871DD65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{483A5ADB-6BF8-4816-B4E1-10EA2871DD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{483A5ADB-6BF8-4816-B4E1-10EA2871DD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{483A5ADB-6BF8-4816-B4E1-10EA2871DD65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Models;
 
-namespace Database.Configurations {
+namespace RiverApi.Db.Configurations {
     public class SectionConfiguration : IEntityTypeConfiguration<Section> {
         public void Configure(EntityTypeBuilder<Section> builder) {
             builder.HasOne(s => s.LevelSpot)

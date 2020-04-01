@@ -1,12 +1,15 @@
-using System.Reflection;
-using Database.Interfaces;
+using System.IO;
 using Models;
+using RiverApi.Db.Interfaces;
 
-namespace Database {
+namespace RiverApi.Db {
     public interface IUnitOfWork {
-        void SaveChanges();
-
         UserRepository Users { get; set; }
-        // TODO: declare Repositories
+        IRepository<River> Rivers { get; set; }
+        IRepository<LevelSpot> LevelSpots { get; set; }
+        IRepository<Measurement> Measurements { get; set; }
+        IRepository<Section> Sections { get; set; }
+        IRepository<HotSpot> HotSpots { get; set; }
+        void SaveChanges();
     }
 }

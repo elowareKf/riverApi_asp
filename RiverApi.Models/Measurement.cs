@@ -1,6 +1,8 @@
+using System;
+
 namespace Models {
     public class Measurement : ModelBase {
-        public string TimeStamp { get; set; }
+        public DateTime TimeStamp { get; set; }
         public double? Level { get; set; }
         public double? Flow { get; set; }
         public double? Temperature { get; set; }

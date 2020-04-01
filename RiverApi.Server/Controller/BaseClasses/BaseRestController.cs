@@ -1,6 +1,6 @@
-using Database.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using RiverApi.Db.Interfaces;
 
 namespace RiverApi.Server.Controller.BaseClasses {
     public abstract class BaseRestController<TModel> : ControllerBase

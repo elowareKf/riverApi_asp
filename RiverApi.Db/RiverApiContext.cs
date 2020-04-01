@@ -1,8 +1,8 @@
-using Database.Configurations;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using RiverApi.Db.Configurations;
 
-namespace Database {
+namespace RiverApi.Db {
     public class RiverApiContext : DbContext {
         private readonly string _connectionString;
 

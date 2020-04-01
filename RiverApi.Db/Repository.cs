@@ -1,10 +1,9 @@
-﻿using System;
-using System.Linq;
-using Database.Interfaces;
+﻿using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Models;
+using RiverApi.Db.Interfaces;
 
-namespace Database {
+namespace RiverApi.Db {
     public class Repository<TModel> : IRepository<TModel> where TModel : ModelBase {
         protected readonly DbContext _context;
         protected readonly DbSet<TModel> _dbSet;

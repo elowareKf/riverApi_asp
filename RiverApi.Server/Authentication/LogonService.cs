@@ -4,8 +4,8 @@ using System.Linq;
 using System.Security.Authentication;
 using System.Security.Claims;
 using System.Text;
-using Database;
 using Microsoft.IdentityModel.Tokens;
+using RiverApi.Db;
 
 namespace RiverApi.Server.Authentication {
     public class LogonService : ILogonService {

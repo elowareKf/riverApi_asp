@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Models;
 
-namespace Database.Configurations {
+namespace RiverApi.Db.Configurations {
     public class RiverConfiguration : IEntityTypeConfiguration<River> {
         public void Configure(EntityTypeBuilder<River> builder) {
             builder.HasMany(r => r.LevelSpots)

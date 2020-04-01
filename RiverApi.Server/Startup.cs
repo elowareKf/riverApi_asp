@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
-using Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using RiverApi.Db;
 using RiverApi.Server.Authentication;
 using RiverApi.Server.Dto;
 

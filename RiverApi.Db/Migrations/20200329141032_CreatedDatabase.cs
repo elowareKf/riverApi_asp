@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Database.Migrations
+namespace RiverApi.Db.Migrations
 {
     public partial class CreatedDatabase : Migration
     {

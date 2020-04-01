@@ -1,6 +1,5 @@
 version: '3'
 services:
-  
   db:
     image: mcr.microsoft.com/mssql/server:latest
     environment:
@@ -10,3 +9,10 @@ services:
       - 1434:1433
     volumes:
     - ./database:/var/opt/backups
+
+  mysql:
+    image: mysql:latest
+    ports:
+    - 1435:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: MySqlServer.1

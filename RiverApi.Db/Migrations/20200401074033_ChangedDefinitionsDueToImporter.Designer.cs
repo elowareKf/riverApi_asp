@@ -4,13 +4,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RiverApi.Db.Migrations
 {
     [DbContext(typeof(RiverApiContext))]
-    partial class RiverApiContextModelSnapshot : ModelSnapshot
+    [Migration("20200401074033_ChangedDefinitionsDueToImporter")]
+    partial class ChangedDefinitionsDueToImporter
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,7 +1,6 @@
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
-namespace Database.Interfaces {
+namespace RiverApi.Db.Interfaces {
     public interface IRepository<TModel> {
         TModel Get(int id, bool noTracking = false);
         IQueryable<TModel> Get();
