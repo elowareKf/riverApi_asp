@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using Models;
 using MySql.Data.MySqlClient;
 using RiverApi.Db;
@@ -16,6 +15,8 @@ namespace DataConverter {
             _rivers = new Dictionary<int, River>();
             _sections = new Dictionary<int, Section>();
             _levelSpots = new Dictionary<int, LevelSpot>();
+            var context = new RiverApiContext();
+            context.Database.EnsureCreated();
 
             Console.WriteLine("Converting MySQL into MSSQL...");
             var mysql =
@@ -28,9 +29,29 @@ namespace DataConverter {
             GetMeasurements(mysql);
             mysql.Close();
 
-            var unitOfWork = new UnitOfWork(null);
-            _rivers.Select(r => unitOfWork.Context.Rivers.Add(r.Value));
-            unitOfWork.Context.SaveChanges();
+            Console.WriteLine($"Rivers found {_rivers.Values.Count}");
+
+            var count = _rivers.Count;
+            var index = 0;
+            bool saved50 = false;
+
+            foreach (var river in _rivers) {
+                var percentage = ((double) (index++) / (double) count);
+                PrintPercentage(percentage);
+                context.Rivers.Add(river.Value);
+                context.SaveChanges();
+            }
+
+            Console.WriteLine("... Done");
+        }
+
+        private static void PrintPercentage(double percentage) {
+            var gauge = "";
+            var gaugeLength = 50;
+            for (var i = 0; i < gaugeLength; i++)
+                gauge += (percentage > i / (double) gaugeLength) ? '#' : ' ';
+
+            Console.Write($"\rProzent fertig {percentage:P} : [{gauge}]");
         }
 
         private static void GetMeasurements(MySqlConnection mysql) {
@@ -69,7 +90,7 @@ namespace DataConverter {
                     Flow = (double?) GetValue<decimal>(reader, "Flow"),
                     Level = (double?) GetValue<decimal>(reader, "Level"),
                     Temperature = (double?) GetValue<decimal>(reader, "Temperature"),
-                    Measurements = new List<Measurement>(), 
+                    Measurements = new List<Measurement>(),
 //RiverId = GetValue<string>(reader, "RiverId"), 
 //SectionId = GetValue<string>(reader, "SectionId"), 
                 };

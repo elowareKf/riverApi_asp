@@ -17,11 +17,11 @@ namespace RiverApi.Db {
         /// For CLI usages only
         /// </summary>
         public RiverApiContext() {
-            
         }
 
-        public RiverApiContext(string connectionString) {
+        public RiverApiContext(string connectionString) : this(){
             _connectionString = connectionString;
+            Database.EnsureCreated();
         }
 
 

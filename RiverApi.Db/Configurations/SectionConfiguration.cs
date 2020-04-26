@@ -5,10 +5,10 @@ using Models;
 namespace RiverApi.Db.Configurations {
     public class SectionConfiguration : IEntityTypeConfiguration<Section> {
         public void Configure(EntityTypeBuilder<Section> builder) {
+            
             builder.HasOne(s => s.LevelSpot)
                 .WithMany()
                 .HasForeignKey(s => s.LevelSpotId)
-                .HasPrincipalKey(l=>l.SectionId)
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
             builder.HasMany(s => s.HotSpots)

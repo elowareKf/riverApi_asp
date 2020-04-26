@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Models;
 using RiverApi.Db.Interfaces;
 

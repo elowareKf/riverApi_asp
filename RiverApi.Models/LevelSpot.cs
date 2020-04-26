@@ -13,6 +13,5 @@ namespace Models {
         public double? Temperature { get; set; }
         public List<Measurement> Measurements { get; set; }
         public int RiverId { get; set; }
-        public int? SectionId { get; set; }
     }
 }
